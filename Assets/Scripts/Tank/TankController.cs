@@ -119,6 +119,7 @@ namespace Tanks
             _prevPosition = position;
 
             CurrentSpeed = (float)Math.Round((double)distance / Time.deltaTime * c_convertMeterInSecFromKmInH, 1);
+            Debug.Log(_camera.m_Lens.FieldOfView);
             _camera.m_Lens.FieldOfView = Mathf.Lerp(_fov.x, _fov.y, Mathf.InverseLerp(0f, _maxSpeedFOV, CurrentSpeed));
         }
 
